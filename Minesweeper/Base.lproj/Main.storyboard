@@ -1,14 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Z4-2J-Ohj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="yhP-I2-phi">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="8Z4-2J-Ohj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZZs-Op-dJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="o9Y-b1-7YE" kind="relationship" relationship="rootViewController" id="OUA-s6-LHk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpi-4E-ShD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1450" y="37"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="fy0-3C-zat">
+            <objects>
+                <viewController id="o9Y-b1-7YE" customClass="MenuViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q3U-4t-pWV"/>
+                        <viewControllerLayoutGuide type="bottom" id="WfM-NK-IlE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qlD-oS-JPg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydg-vp-z76">
+                                <rect key="frame" x="148" y="434" width="78" height="30"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <action selector="onStartGame:" destination="o9Y-b1-7YE" eventType="touchUpInside" id="Osj-Pv-khU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8T4-ZQ-dxQ">
+                                <rect key="frame" x="162" y="191" width="50" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3a-Er-0un">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <state key="normal" title="Easy"/>
+                                        <connections>
+                                            <action selector="onEasy:" destination="o9Y-b1-7YE" eventType="touchUpInside" id="UqN-hL-fcz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvB-q3-0uB">
+                                        <rect key="frame" x="0.0" y="35" width="50" height="30"/>
+                                        <state key="normal" title="Normal"/>
+                                        <connections>
+                                            <action selector="onNormal:" destination="o9Y-b1-7YE" eventType="touchUpInside" id="kRD-jR-9Hx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxR-Uv-bkf">
+                                        <rect key="frame" x="0.0" y="70" width="50" height="30"/>
+                                        <state key="normal" title="Hard"/>
+                                        <connections>
+                                            <action selector="onHard:" destination="o9Y-b1-7YE" eventType="touchUpInside" id="n3p-b4-rGq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ydg-vp-z76" firstAttribute="centerX" secondItem="qlD-oS-JPg" secondAttribute="centerX" id="3u3-G2-gmJ"/>
+                            <constraint firstItem="WfM-NK-IlE" firstAttribute="top" secondItem="ydg-vp-z76" secondAttribute="bottom" constant="203" id="Q8C-Qd-Dc4"/>
+                            <constraint firstItem="8T4-ZQ-dxQ" firstAttribute="centerX" secondItem="ydg-vp-z76" secondAttribute="centerX" id="fNb-KM-nxr"/>
+                            <constraint firstItem="8T4-ZQ-dxQ" firstAttribute="top" secondItem="Q3U-4t-pWV" secondAttribute="bottom" constant="171" id="tmD-3t-1Ot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dnh-4w-SNZ"/>
+                    <connections>
+                        <outletCollection property="gameModeButtons" destination="P3a-Er-0un" collectionClass="NSMutableArray" id="C2q-b3-dLF"/>
+                        <outletCollection property="gameModeButtons" destination="rvB-q3-0uB" collectionClass="NSMutableArray" id="QVS-nP-kx1"/>
+                        <outletCollection property="gameModeButtons" destination="jxR-Uv-bkf" collectionClass="NSMutableArray" id="CMt-sE-bYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDz-yu-vQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-710" y="36"/>
+        </scene>
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +103,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="fUc-vu-byF" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithSegue:" id="pE9-WV-aws"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="fUc-vu-byF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="31" y="36"/>
         </scene>
     </scenes>
 </document>
